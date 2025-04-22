@@ -18,15 +18,6 @@
 - React JS - A JavaScript library for building user interfaces.
 - Tailwind CSS - A CSS framework for rapidly building modern websites.
 
-## Technologies used:
-
-- Vite - A fast development server and build tool for modern web applications.
-- React JS - A JavaScript library for building user interfaces.
-- Tailwind CSS - A CSS framework for rapidly building modern websites.
-- Firebase (used for authentication ) - Google's application development platform
-- Redux - A JavaScript library for managing application state
-- Razorpay (test only) - A payment gateway that allows businesses to accept online payments.
-- Gemini API - Official API of google gemini AI
 
 ## Installation:
 
