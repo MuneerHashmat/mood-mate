@@ -21,7 +21,6 @@ const MainProvider = ({ children }) => {
       
       setWeather({
         temp: Math.round(data.main.temp),
-        icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`,
         condition: data.weather[0].main,
         city: data.name,
       });
@@ -37,18 +36,29 @@ const MainProvider = ({ children }) => {
   }
 
   useEffect(() => {
+  let intervalId;
+
+  const fetchUpdatedWeather = (lat, lon) => {
+    fetchWeather(lat, lon); 
+
+    intervalId = setInterval(() => {
+      fetchWeather(lat, lon);
+    }, 600000);
+  };
     navigator.geolocation.getCurrentPosition(
       (position) => {
-        fetchWeather(
+        fetchUpdatedWeather(
           position.coords.latitude,
           position.coords.longitude
         );
       },
       () => {
         //Default to Delhi if location permission denied
-        fetchWeather(28.6139, 77.209);
+        fetchUpdatedWeather(28.6139, 77.209);
       }
     );
+
+    return ()=> clearInterval(intervalId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

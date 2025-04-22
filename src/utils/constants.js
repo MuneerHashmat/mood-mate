@@ -5,3 +5,21 @@ export const moods = [
   { id: 4, emoji: "😡", label: "Angry" },
   { id: 5, emoji: "😞", label: "Disappointed" },
 ];
+
+export const weatherEmojis = {
+  Clear: "☀️",     
+  Clouds: "☁️",      
+  Rain: "🌧️",       
+  Drizzle: "🌦️",      
+  Thunderstorm: "⛈️", 
+  Snow: "❄️",         
+  Mist: "🌫️",         
+  Fog: "🌫️",         
+  Haze: "🌁",         
+  Smoke: "💨",        
+  Dust: "🌪️",         
+  Sand: "🏜️",        
+  Ash: "🌋",          
+  Squall: "🌬️",       
+  Tornado: "🌪️"       
+};

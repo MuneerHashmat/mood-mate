@@ -1,11 +1,51 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import WeatherWidget from "./WeatherWidget";
 import LiveClock from "./LiveClock";
 import { moods } from "../utils/constants";
+import MainContext from "../context/MainContext";
+import toast from "react-hot-toast";
 
 const AddNote = () => {
   const [currentMood, setCurrentMood] = useState(null);
   const [textInput, setTextInput]=useState("");
+  const {weather, currentTime, addNote}=useContext(MainContext);
+
+  const handleSubmit=(e)=>{
+    e.preventDefault();
+    if(!textInput){
+      toast.error("Please add a note");
+      return;
+    }
+    if(!currentMood){
+      toast.error("Please select a mood");
+      return;
+    }
+
+    const formattedDate=currentTime.toLocaleDateString("en-US", {
+      month: "long",
+      day: "numeric",
+      year: "numeric",
+    });
+    const formattedTime = currentTime.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    });
+
+    const newNote={
+      id: crypto.randomUUID(),
+      mood: currentMood,
+      text: textInput,
+      weather: weather,
+      date: formattedDate,
+      time: formattedTime
+    }
+
+    addNote(newNote);
+
+    setCurrentMood(null);
+    setTextInput("")
+  }
   return (
     <div className="w-[95vw] sm:w-[80vw] md:w-[70vw] lg:w-[50vw] mx-auto glassmorphism p-4 flex flex-col gap-3">
       <div className="flex justify-between">
@@ -36,7 +76,9 @@ const AddNote = () => {
           <LiveClock />
         </div>
         <div className="mt-4 w-full">
-          <form>
+          <form
+          onSubmit={handleSubmit}
+          >
             <div className="flex gap-4">
               <div className="flex flex-col gap-1 items-center">
                 <p>Mood</p>
@@ -47,7 +89,6 @@ const AddNote = () => {
                 </div>
               </div>
               <textarea 
-              required
               placeholder="Add a note..."
               value={textInput}
               onChange={(e)=>setTextInput(e.target.value)}

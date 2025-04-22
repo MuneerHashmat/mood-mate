@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import MainContext from "../context/MainContext";
+import { weatherEmojis } from "../utils/constants";
 
 const WeatherWidget = () => {
   const { loading, weather } = useContext(MainContext);
@@ -18,12 +19,8 @@ const WeatherWidget = () => {
       </div>
 
       <div className="flex items-center">
-        <img
-          src={weather.icon}
-          alt={weather.condition}
-          className="w-[30px] h-[30px]"
-        />
-        <p className="text-md font-semibold">{weather.temp}°C</p>
+        
+        <p className="text-md font-semibold">{weatherEmojis[weather.condition]}{" "}{weather.temp}°C</p>
         <p className="text-[12px] px-2">{weather.condition}</p>
       </div>
       <div></div>
