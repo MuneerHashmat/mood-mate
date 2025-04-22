@@ -1,12 +1,51 @@
-# React + Vite
+<h1 align="center">🌟 Mood Mate Journaling Web App 🌟</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Demo:
 
-Currently, two official plugins are available:
+### [Mood Mate](https://mood-mate-muneer.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features:
 
-## Expanding the ESLint configuration
+- ☁️ Widget displaying real-time weather
+- ⏱️ Live clock displaying real-time date and time
+- 📝Create a note with mood expression
+- 💿 Local storage to store notes
+- 📱 Fully responsive ui
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Technologies used:
+
+- Vite - A fast development server and build tool for modern web applications.
+- React JS - A JavaScript library for building user interfaces.
+- Tailwind CSS - A CSS framework for rapidly building modern websites.
+
+## Technologies used:
+
+- Vite - A fast development server and build tool for modern web applications.
+- React JS - A JavaScript library for building user interfaces.
+- Tailwind CSS - A CSS framework for rapidly building modern websites.
+- Firebase (used for authentication ) - Google's application development platform
+- Redux - A JavaScript library for managing application state
+- Razorpay (test only) - A payment gateway that allows businesses to accept online payments.
+- Gemini API - Official API of google gemini AI
+
+## Installation:
+
+1. Clone this repository :
+
+```bash
+git clone https://github.com/MuneerHashmat/mood-mate.git
+```
+
+2. Navigate to the folder: `cd mode-mate`
+3. Install the dependencies: `npm install`
+4. Create a .env file on root directory and add the Open weather map API key:
+
+```bash
+VITE_WEATHER_API_KEY
+```
+
+4. Start development server:
+
+```bash
+npm run dev
+```
