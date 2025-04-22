@@ -2,6 +2,10 @@
 
 @import "tailwindcss";
 
+*{
+  font-family: "Poppins", sans-serif;
+}
+
 .gradient-bg {
   background: #ff5c5c;
   background: linear-gradient(
@@ -11,9 +15,7 @@
   );
 }
 
-*{
-  font-family: "Poppins", sans-serif;
-}
+
 
 .glassmorphism {
   background: rgba(255, 255, 255, 0.5);
@@ -22,6 +24,5 @@
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 1.5rem;
   color: #ffffff;
 }

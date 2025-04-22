@@ -7,7 +7,7 @@ const WeatherWidget = () => {
   if (loading || !weather)
     return (
       <div>
-        <img src="/spinner2.svg" alt="loader" className="w-[40px] h-[40px]" />
+        <img src="/spinner2.svg" alt="loader" className="w-[60px] h-[60px]" />
       </div>
     );
   return (
